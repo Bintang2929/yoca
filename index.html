@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yohan Love Ica Selamanya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>YOHAN LOVE ICA SELAMANYA</h1>
+        <div class="poem-container">
+            <p id="poem"></p>
+        </div>
+    </div>
+
+    <script>
+        const poems = [
+            "Kau bagaikan matahari, menghangatkan setiap sudut hatiku.",
+            "Cinta kita adalah puisi yang ditulis oleh bintang-bintang di langit malam.",
+            "Bersamamu adalah anugerah terindah yang pernah kumiliki.",
+            "Setiap detik bersamamu adalah keajaiban yang tak pernah pudar.",
+            "Aku mencintaimu lebih dari kata-kata yang bisa kuungkapkan."
+        ];
+
+        function updatePoem() {
+            const hour = new Date().getHours();
+            document.getElementById('poem').innerText = poems[hour % poems.length];
+        }
+
+        setInterval(updatePoem, 3600000); // Update setiap jam
+        updatePoem(); // Panggil saat halaman pertama kali dimuat
+    </script>
+</body>
+</html>
